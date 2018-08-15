@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" onMouseMoved="#posicionMouse" prefHeight="350.0" prefWidth="512.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="minipain.FXMLDocumentController">
+   <children>
+      <Canvas fx:id="microLienzo" height="716.0" layoutY="-1.0" width="882.0" />
+      <Canvas fx:id="lienzo" height="716.0" onMouseClicked="#crearCuadrados" width="882.0" />
+      <MenuBar fx:id="menubar">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#crearEstrella1" text="Crear Estrella 1 " />
+                  <MenuItem mnemonicParsing="false" onAction="#crearEstrella2" text="Crear Estrella 2" />
+                  <MenuItem mnemonicParsing="false" onAction="#crearEstrella3" text="Crear Estrella 3" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#limpiar" text="Limpiar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Circle fx:id="C" fill="DODGERBLUE" layoutX="441.0" layoutY="171.0" radius="49.0" stroke="BLACK" strokeType="INSIDE">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Circle>
+      <Button fx:id="play" layoutX="8.0" layoutY="57.0" mnemonicParsing="false" onAction="#moverCirculo" prefHeight="39.0" prefWidth="73.0" text="Play" />
+      <Circle fx:id="C1" fill="#3dff1f" layoutX="425.0" layoutY="156.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="C2" fill="#3dff1f" layoutX="456.0" layoutY="156.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+      <ColorPicker fx:id="colorPicker" layoutX="737.0" layoutY="32.0" />
+      <Label fx:id="LX" alignment="CENTER" layoutX="779.0" layoutY="80.0" prefHeight="32.0" prefWidth="81.0" text="dfghg" textAlignment="CENTER">
+         <font>
+            <Font name="Yu Gothic UI Regular" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.9666666666666667" startY="0.2714285714285714">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Label fx:id="LY" alignment="CENTER" layoutX="783.0" layoutY="110.0" prefHeight="32.0" prefWidth="81.0" text="fdfbdfb">
+         <font>
+            <Font name="Yu Gothic UI Regular" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.17142857142857143">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Button fx:id="stop" layoutX="92.0" layoutY="57.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="73.0" text="Stop" />
+      <ToggleButton fx:id="changeColor" layoutX="625.0" layoutY="32.0" mnemonicParsing="false" onAction="#cambiarColor" text="Cambiar Color" />
+      <Label fx:id="LX1" alignment="CENTER" layoutX="739.0" layoutY="80.0" prefHeight="32.0" prefWidth="81.0" text="X:" textAlignment="CENTER">
+         <font>
+            <Font name="Yu Gothic UI Regular" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.9666666666666667" startY="0.2714285714285714">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="LX2" alignment="CENTER" layoutX="739.0" layoutY="110.0" prefHeight="32.0" prefWidth="81.0" text="Y:" textAlignment="CENTER">
+         <font>
+            <Font name="Yu Gothic UI Regular" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.9666666666666667" startY="0.2714285714285714">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button fx:id="save" layoutX="14.0" layoutY="641.0" mnemonicParsing="false" onAction="#guardarXML" prefHeight="51.0" prefWidth="144.0" text="Guardar puntos figura 1" />
+   </children>
+</AnchorPane>
